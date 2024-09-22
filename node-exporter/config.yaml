@@ -1,0 +1,24 @@
+name: "Node Exporter"
+version: "1.0.0"
+slug: "node_exporter"
+url: https://github.com/prometheus/node_exporter
+description: "Prometheus exporter for hardware and OS metrics exposed by *NIX kernels, written in Go with pluggable metric collectors"
+init: false
+webui: http://[HOST]:[PORT:9100]/metrics
+watchdog: http://[HOST]:[PORT:9100]/metrics
+panel_icon: mdi:fire
+panel_title: "Node Exporter"
+panel_admin: true
+arch:
+  - aarch64
+  - amd64
+  - armhf
+  - armv7
+  - i386
+ports:
+  9100/tcp: 9100
+ports_description:
+  9100/tcp: Node Exporter Metrics
+apparmor: true
+devices:
+  - /
