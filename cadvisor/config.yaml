@@ -1,0 +1,29 @@
+name: "cAdvisor"
+version: "1.0.0"
+slug: "cadvisor"
+url: https://github.com/google/cadvisor
+description: "cAdvisor (Container Advisor) provides an understanding of the resource usage and performance characteristics of running containers"
+init: false
+webui: http://[HOST]:[PORT:8080]/containers/
+watchdog: http://[HOST]:[PORT:8080]/containers/
+panel_icon: "mdi:owl"
+panel_title: "cAdvisor"
+panel_admin: true
+arch:
+  - aarch64
+  - amd64
+  - armhf
+  - armv7
+  - i386
+ports:
+  8080/tcp: 8080
+ports_description:
+  8080/tcp: cAdvisor web UI
+apparmor: true
+docker_api: true
+devices:
+  - /
+  - /sys
+  - /var/run
+  - /dev/disk/
+  - /var/lib/docker/
